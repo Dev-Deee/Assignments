@@ -29,9 +29,10 @@ employees = [
 ("Sara", "Finance", 70000)
 ]
 
-def unpack_score (score):
-    for name, score in students:
-        print(f"name: {name}, score: {score}")
+def unpack_score ():
+    for items in students:
+        student, score = items
+        print(student, score)
 
 def unpack_grade (grade):
     for name, grade in students:
@@ -48,14 +49,15 @@ def count_students_passed(grade):
 def get_products_above_100(product):
     return product[1] > 100
 
-def calculate_sum(product):
+def calculate_sum(products):
     sum = 0
     for product, price in products:
         sum += price
     return sum
 
 def unpack_product(products):
-    for product, price in products:
+    for product in products:
+        produt, price = product
         print(f"Product: {product} - Price: {price}")
 
 def get_positive_points(points):
@@ -66,17 +68,15 @@ def get_positive_points(points):
             positive_points.append((pointA, pointB))
     return positive_points
 
-
-# def get_high_earning_it_employees(employees):
-#     it_employees = []
-#     for employee in employees:
-#         name, department, salary = employee
-#         if department == "IT" and salary > 55000:
-#             it_employees.append((name, department, salary))
-#     return it_employees
-
 def get_high_earning_it_employees(employees):
-    return [employee for employee in employees if employee[1] == "IT" and employee[2] > 55000]
+    it_employees = []
+    for employee in employees:
+        name, department, salary = employee
+        if department == "IT" and salary > 55000:
+            it_employees.append((name, department, salary))
+    return it_employees
+
+
 
 
 unpack_score(students)
