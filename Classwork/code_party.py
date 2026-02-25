@@ -10,6 +10,8 @@ tuple_list = [(1,'A'), (4, 'B'), (2,'C')]
 lists = ["apple", "banana", "cherry", "madam", "c++"]
 words = ["I", "love", "Python"]
 number_of_numbers = [1,2,3,4]
+elements = [(1, 2), (3, 4), (5, 6)]
+non_elements = ["123", "456" ,"789", "abc", "def"]
 
 def add_number_to_tuple():
     new_number = list(score)
@@ -72,7 +74,7 @@ def find_maximum_number(input_one, input_two):
             return input_two
 
 def concatenate_string(input_one, input_two):
-    return input_one + input_two
+    return input_one + " " + input_two
 
 def square_and_product(input_one, input_two):
     return input_one * input_two
@@ -80,12 +82,26 @@ def square_and_product(input_one, input_two):
 def product_of_numbers(input_one):
     return input_one ** 2
 
+def unpack_tuples(elements):
+    new_list = []
+    for element in elements:
+        number_one, number_two = element
+        new_list.append(number_one + number_two)
+    return new_list
+result = unpack_tuples(elements)
 
+def find_greatest_number(input_one):
+    return input_one > 5
 
+def find_numeric_numbers(elements):
+    return [item for item in elements if item.isdigit()]
 
+result_of_numeric_numbers = find_numeric_numbers(non_elements)
+sum_the_numbers_in_list = list(map(int, result_of_numeric_numbers))
+total = sum(sum_the_numbers_in_list)
+print(total)
 
-
-
+print(list(filter(find_greatest_number, result)))
 print(reduce(square_and_product,(list(map(product_of_numbers, number_of_numbers)))))
 print(reduce(find_maximum_number, sample_price))
 print(reduce(concatenate_string, words))

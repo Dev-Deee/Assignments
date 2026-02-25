@@ -57,7 +57,7 @@ def calculate_sum(products):
 
 def unpack_product(products):
     for product in products:
-        produt, price = product
+        product, price = product
         print(f"Product: {product} - Price: {price}")
 
 def get_positive_points(points):
@@ -77,6 +77,24 @@ def get_high_earning_it_employees(employees):
     return it_employees
 
 
+Schools[
+
+    ("Adewale", 30, 220.30),
+    ("Ayuba", 27, 320.30)
+
+]
+
+def add_to_score(school):
+    score = []
+    for name, age, score in school:
+        new_score = score + 10
+        score.append((name, age, new_score))
+    print
+    # return score
+
+
+
+
 
 
 unpack_score(students)
@@ -87,3 +105,4 @@ print(calculate_sum(products))
 unpack_product(products)
 print(get_positive_points(points))
 print(get_high_earning_it_employees(employees))
+print(list(map(add_to_score, School)))
